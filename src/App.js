@@ -1,24 +1,33 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import faker from 'faker';
+import CommentDetail from './CommentDetail';
+import ApprovalCard from './ApprovalCard';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <div className={'ui container comments'}>
+
+            <ApprovalCard content=<CommentDetail
+                          image={ faker.image.avatar() }
+                          author={faker.name.firstName()}
+                          timeStamp={faker.date.past(1)}
+                          post={faker.lorem.paragraph(3)}
+            /> />
+            <CommentDetail
+                image={ faker.image.avatar() }
+                author={faker.name.firstName()}
+                timeStamp={faker.date.past(1)}
+                post={faker.lorem.paragraph(3)}
+            />
+            <CommentDetail
+                image={ faker.image.avatar() }
+                author={faker.name.firstName()}
+                timeStamp={faker.date.past(1)}
+                post={faker.lorem.paragraph(3)}
+            />
+        </div>
     </div>
   );
 }
