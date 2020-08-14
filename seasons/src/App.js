@@ -39,14 +39,26 @@ class App extends React.Component {
     );
   }
 
-  render() {
+  renderContent() {
     if ( this.state.loading )
-      return <Loading show={ this.state.loading } message={ ' Loading Location ' }/>;
+      return <Loading show={ this.state.loading } message={ 'Please accept know your location request' }/>;
 
     if ( this.state.errorMessage )
       return <div> { this.getErrorMessage() } </div>;
 
     return  <SeasonDisplay latitude={ this.state.latitude  }/>;
   }
+
+  render() {
+    return (
+      <div className={'border red'} >
+        { this.renderContent() }
+      </div>
+  );
+  }
+}
+
+Loading.defaultProps = {
+  message: 'Loading'
 }
 export default App;
