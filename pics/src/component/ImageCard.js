@@ -10,7 +10,7 @@ class ImageCard extends React.Component {
 
   setSpans = () => {
     const height = this.imageRef.current.clientHeight;
-    // Tracks what you set in ImageCard.css for grid-auto-rows
+    // Tracks what you set in VideoItem.css for grid-auto-rows
     const gridAutoRows = 10;
     const spans = Math.ceil( height / gridAutoRows +1 );
     this.setState( { spans: spans });
