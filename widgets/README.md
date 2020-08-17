@@ -1,5 +1,12 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## `TODO`
+Investigate warning with Input component:
+
+./src/components/Input.js
+
+  Line 15:6:  React Hook useEffect has a missing dependency: 'setValue'. Either include it or remove the dependency array. If 'setValue' changes too often, find the parent component that defines it and wrap that definition in useCallback  react-hooks/exhaustive-deps
+
 ## Available Scripts
 
 In the project directory, you can run:
