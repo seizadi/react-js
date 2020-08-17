@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import WikipediaSearch from "./WikipediaSearch";
+import WikipediaSearch from "./services/WikipediaSearch";
 
 const WIKIPEDIA_URL = 'https://en.wikipedia.org?curid=';
 

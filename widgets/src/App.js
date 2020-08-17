@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
-import Accordion from './Accordion';
+import Accordion from './components/Accordion';
 import Search from './Search';
+import Dropdown from "./components/Dropdown";
+import Translate from "./components/Translate";
+import Route from "./Route";
+import Header from "./components/Header";
 
 const items = [
   {
@@ -18,12 +22,43 @@ const items = [
   }
 ]
 
-// Remove Accordion...
-//     <Accordion items={items}/>
+const dropOptions = [
+  {
+    label: 'The color red',
+    value: 'red'
+  },
+  {
+    label: 'Green color here',
+    value: 'green'
+  },
+  {
+    label: 'A shade of Blue',
+    value: 'blue'
+  }
+]
+
 function App() {
+  const [selectedColor, setSelectedColor] = useState(dropOptions[0]);
+
   return (
     <div className="App">
-      <Search />
+      <Header />
+      <Route path={'/'}>
+        <Accordion items={items}/>
+      </Route>
+      <Route path={'/list'}>
+        <Search />;
+      </Route>
+      <Route path={'/dropdown'}>
+        <Dropdown
+          label={'Select a color'}
+          options={dropOptions}
+          selected={selectedColor}
+          onSelectedChange={setSelectedColor} />
+      </Route>
+      <Route path={'/translate'}>
+        <Translate />
+      </Route>
     </div>
   );
 }
