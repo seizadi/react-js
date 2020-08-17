@@ -12,7 +12,7 @@ const Input = ({ label, value, setValue}) => {
       clearTimeout(timeoutId);
     });
 
-  }, [term]);
+  }, [term, setValue]);
 
 
   return (
