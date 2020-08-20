@@ -1,5 +1,11 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Packages installed
+This project requires axios for REST and a number of
+redux packages:
+```bash
+yarn add axios redux react-redux redux-thunk               4s  2.6.3
+```
 ## Available Scripts
 
 In the project directory, you can run:
