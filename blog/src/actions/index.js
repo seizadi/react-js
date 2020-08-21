@@ -7,7 +7,7 @@ export const fetchPostsAndUsers = () => async (dispatch, getState) => {
     const userIds = _.uniq(_.map(getState().posts, 'userId'));
     userIds.forEach( id => dispatch(fetchUser(id)));
 
-    // Chain lodash method to do the above function
+    // Chain lodash methods to do the above function
     // _.chain(getState().posts)
     //   .map('userId')
     //   .uniq()
